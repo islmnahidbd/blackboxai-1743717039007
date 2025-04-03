@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa Types - VisaService</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .visa-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.pexels.com/photos/461048/pexels-photo-461048.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <!-- Include Navigation -->
+  <div id="nav"></div>
+
+  <!-- Hero Section -->
+  <section class="visa-hero h-64 flex items-center justify-center text-white">
+    <div class="text-center px-4">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">Visa Types</h1>
+      <p class="text-lg">Find the right visa for your travel needs</p>
+    </div>
+  </section>
+
+  <!-- Visa Categories -->
+  <section class="py-20 px-4 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tourist Visa Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Tourist Visa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-passport text-blue-600"></i>
+            </div>
+            <h2 class="text-xl font-bold">Tourist Visa</h2>
+          </div>
+          <p class="text-gray-600 mb-4">For leisure travel, sightseeing, and visiting friends/family.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">Processing: 3-5 days</span>
+            <a href="application-form.html?type=tourist" class="text-blue-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Visa Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Business Visa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-briefcase text-blue-600"></i>
+            </div>
+            <h2 class="text-xl font-bold">Business Visa</h2>
+          </div>
+          <p class="text-gray-600 mb-4">For attending meetings, conferences, or business negotiations.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">Processing: 5-7 days</span>
+            <a href="application-form.html?type=business" class="text-blue-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Visa Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg" alt="Student Visa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-graduation-cap text-blue-600"></i>
+            </div>
+            <h2 class="text-xl font-bold">Student Visa</h2>
+          </div>
+          <p class="text-gray-600 mb-4">For pursuing education at recognized institutions abroad.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">Processing: 2-3 weeks</span>
+            <a href="application-form.html?type=student" class="text-blue-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Visa Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg" alt="Work Visa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-hard-hat text-blue-600"></i>
+            </div>
+            <h2 class="text-xl font-bold">Work Visa</h2>
+          </div>
+          <p class="text-gray-600 mb-4">For employment opportunities with approved companies.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">Processing: 3-4 weeks</span>
+            <a href="application-form.html?type=work" class="text-blue-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transit Visa Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.pexels.com/photos/3727250/pexels-photo-3727250.jpeg" alt="Transit Visa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-plane text-blue-600"></i>
+            </div>
+            <h2 class="text-xl font-bold">Transit Visa</h2>
+          </div>
+          <p class="text-gray-600 mb-4">For passing through a country en route to another destination.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">Processing: 1-2 days</span>
+            <a href="application-form.html?type=transit" class="text-blue-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Visa Card -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg" alt="Family Visa" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-users text-blue-600"></i>
+            </div>
+            <h2 class="text-xl font-bold">Family Visa</h2>
+          </div>
+          <p class="text-gray-600 mb-4">For joining family members who are residents abroad.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">Processing: 2-4 weeks</span>
+            <a href="application-form.html?type=family" class="text-blue-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+
+  <script>
+    // Load shared components
+    fetch('components.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        document.getElementById('nav').appendChild(doc.querySelector('nav'));
+        document.getElementById('footer').appendChild(doc.querySelector('footer'));
+      });
+  </script>
+</body>
+</html>
