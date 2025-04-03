@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisaService - Global Visa Solutions</title>
+  <title>LeogoVisa - Premium Visa Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
-    .hero {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.pexels.com/photos/730981/pexels-photo-730981.jpeg');
-      background-size: cover;
+    .parallax {
+      background-attachment: fixed;
       background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .video-container {
+      clip-path: inset(1px 1px);
     }
   </style>
 </head>
@@ -19,81 +24,163 @@
   <!-- Include Navigation -->
   <div id="nav"></div>
 
-  <!-- Hero Section -->
-  <section class="hero h-screen flex items-center justify-center text-white">
-    <div class="text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">Global Visa Solutions</h1>
-      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Simplified visa applications for your international travel needs</p>
-      <a href="application-form.html" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+  <!-- Hero Section with Parallax -->
+  <section class="parallax h-screen flex items-center justify-center text-white relative overflow-hidden" 
+           style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg')">
+    <div class="text-center px-4 max-w-4xl mx-auto z-10">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6" id="hero-title">Your Global Visa Partner</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" id="hero-subtitle">Premium visa processing services with 98% approval rate</p>
+      <a href="application-form.html" class="inline-block px-10 py-4 bg-[#f26522] text-white rounded-lg hover:bg-[#e05b1d] transition text-lg font-medium" id="hero-cta">
         Start Your Application
       </a>
+    </div>
+    <div class="absolute inset-0 bg-black/20 z-0"></div>
+  </section>
+
+  <!-- Video Section 1 -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+        <video autoplay loop muted playsinline class="w-full">
+          <source src="https://player.vimeo.com/progressive_redirect/playback/819518133/rendition/1080p/file.mp4?loc=external&signature=5a4b5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f" type="video/mp4">
+        </video>
+      </div>
+      <div class="text-center mt-12 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Choose LeogoVisa?</h2>
+        <p class="text-gray-600 text-lg">With over a decade of experience, we've perfected the visa application process to make it seamless and stress-free for you.</p>
+      </div>
     </div>
   </section>
 
   <!-- Services Preview -->
-  <section class="py-20 px-4 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Our Visa Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <div class="text-blue-600 mb-4">
-          <i class="fas fa-passport text-4xl"></i>
+  <section class="py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Our Visa Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+          <div class="text-[#f26522] mb-6">
+            <i class="fas fa-passport text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Tourist Visa</h3>
+          <p class="text-gray-600 mb-6">Explore new destinations with our hassle-free tourist visa processing.</p>
+          <a href="services.html#tourist" class="text-[#f26522] font-medium hover:underline flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
-        <h3 class="text-xl font-semibold mb-2">Tourist Visa</h3>
-        <p class="text-gray-600">Explore new destinations with our hassle-free tourist visa processing.</p>
-        <a href="services.html#tourist" class="mt-4 inline-block text-blue-600 hover:underline">Learn more →</a>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <div class="text-blue-600 mb-4">
-          <i class="fas fa-briefcase text-4xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+          <div class="text-[#f26522] mb-6">
+            <i class="fas fa-briefcase text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Work Visa</h3>
+          <p class="text-gray-600 mb-6">Secure your work visa for international career opportunities.</p>
+          <a href="services.html#work" class="text-[#f26522] font-medium hover:underline flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
-        <h3 class="text-xl font-semibold mb-2">Work Visa</h3>
-        <p class="text-gray-600">Secure your work visa for international career opportunities.</p>
-        <a href="services.html#work" class="mt-4 inline-block text-blue-600 hover:underline">Learn more →</a>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <div class="text-blue-600 mb-4">
-          <i class="fas fa-graduation-cap text-4xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+          <div class="text-[#f26522] mb-6">
+            <i class="fas fa-graduation-cap text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Student Visa</h3>
+          <p class="text-gray-600 mb-6">Pursue your education abroad with our student visa assistance.</p>
+          <a href="services.html#student" class="text-[#f26522] font-medium hover:underline flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
-        <h3 class="text-xl font-semibold mb-2">Student Visa</h3>
-        <p class="text-gray-600">Pursue your education abroad with our student visa assistance.</p>
-        <a href="services.html#student" class="mt-4 inline-block text-blue-600 hover:underline">Learn more →</a>
       </div>
     </div>
   </section>
 
-  <!-- Process Steps -->
-  <section class="py-20 bg-gray-50">
+  <!-- Video Section 2 -->
+  <section class="py-28 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Simple Application Process</h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-blue-600 text-xl font-bold">1</span>
-          </div>
-          <h3 class="font-semibold mb-2">Select Visa Type</h3>
-          <p class="text-gray-600 text-sm">Choose from our range of visa options</p>
+      <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+        <video autoplay loop muted playsinline class="w-full">
+          <source src="https://player.vimeo.com/progressive_redirect/playback/819518134/rendition/1080p/file.mp4?loc=external&signature=6a5b6c6d6e6f6a5b6c6d6e6f6a5b6c6d6e6f6a5b6c6d6e6f6a5b6c6d6e6f" type="video/mp4">
+        </video>
+      </div>
+      <div class="text-center mt-12 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Process</h2>
+        <p class="text-gray-600 text-lg">Watch how we transform complex visa applications into simple, streamlined processes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-28 bg-[#f26522] text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div>
+          <div class="text-5xl font-bold mb-4" id="stat1">0</div>
+          <p class="text-xl">Countries Covered</p>
         </div>
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-blue-600 text-xl font-bold">2</span>
-          </div>
-          <h3 class="font-semibold mb-2">Complete Form</h3>
-          <p class="text-gray-600 text-sm">Fill our simple online application</p>
+        <div>
+          <div class="text-5xl font-bold mb-4" id="stat2">0</div>
+          <p class="text-xl">Visa Types</p>
         </div>
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-blue-600 text-xl font-bold">3</span>
-          </div>
-          <h3 class="font-semibold mb-2">Submit Documents</h3>
-          <p class="text-gray-600 text-sm">Upload required documents securely</p>
+        <div>
+          <div class="text-5xl font-bold mb-4" id="stat3">0%</div>
+          <p class="text-xl">Approval Rate</p>
         </div>
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-blue-600 text-xl font-bold">4</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg" alt="Client" class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold">Rahman Ahmed</h4>
+              <p class="text-gray-500">Student Visa to Canada</p>
+            </div>
           </div>
-          <h3 class="font-semibold mb-2">Receive Visa</h3>
-          <p class="text-gray-600 text-sm">Get your visa processed quickly</p>
+          <p class="text-gray-600">"LeogoVisa made my student visa process so smooth. Their guidance at every step was invaluable in getting my visa approved quickly."</p>
+          <div class="flex mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
         </div>
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="https://images.pexels.com/photos/3771083/pexels-photo-3771083.jpeg" alt="Client" class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold">Tasnim Khan</h4>
+              <p class="text-gray-500">Work Visa to Germany</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The team's expertise in work visas saved me months of paperwork. I got my visa in record time thanks to their efficient processing."</p>
+          <div class="flex mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Begin Your Visa Journey?</h2>
+      <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">Our experts are standing by to guide you through every step of the process.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="application-form.html" class="px-10 py-4 bg-[#f26522] text-white rounded-lg hover:bg-[#e05b1d] transition text-lg font-medium">
+          Apply Now
+        </a>
+        <a href="contact.html" class="px-10 py-4 border-2 border-[#f26522] text-[#f26522] rounded-lg hover:bg-[#f26522]/10 transition text-lg font-medium">
+          Contact Us
+        </a>
       </div>
     </div>
   </section>
@@ -111,6 +198,80 @@
         document.getElementById('nav').appendChild(doc.querySelector('nav'));
         document.getElementById('footer').appendChild(doc.querySelector('footer'));
       });
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero animations
+    gsap.from("#hero-title", {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power3.out"
+    });
+    gsap.from("#hero-subtitle", {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      delay: 0.3,
+      ease: "power3.out"
+    });
+    gsap.from("#hero-cta", {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      delay: 0.6,
+      ease: "power3.out"
+    });
+
+    // Parallax effect
+    gsap.to(".parallax", {
+      scrollTrigger: {
+        trigger: ".parallax",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      },
+      backgroundPosition: "50% 100px",
+      ease: "none"
+    });
+
+    // Service cards animation
+    gsap.utils.toArray(".bg-white").forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: i * 0.1
+      });
+    });
+
+    // Stats counter
+    const statValues = [35, 12, 98];
+    const statElements = ["#stat1", "#stat2", "#stat3"];
+    
+    statElements.forEach((el, i) => {
+      ScrollTrigger.create({
+        trigger: el,
+        onEnter: () => {
+          gsap.to(el, {
+            innerText: statValues[i],
+            duration: 2,
+            snap: { innerText: 1 },
+            modifiers: {
+              innerText: (value) => {
+                return i === 2 ? Math.floor(value) + "%" : Math.floor(value);
+              }
+            }
+          });
+        }
+      });
+    });
 
     // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', () => {
