@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa Application - VisaService</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .form-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    .form-step {
+      display: none;
+    }
+    .form-step.active {
+      display: block;
+    }
+    .progress-bar {
+      height: 6px;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <!-- Include Navigation -->
+  <div id="nav"></div>
+
+  <!-- Hero Section -->
+  <section class="form-hero h-48 flex items-center justify-center text-white">
+    <div class="text-center px-4">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">Visa Application</h1>
+      <p class="text-lg">Complete your application in just a few steps</p>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <div class="bg-gray-200 h-2 w-full">
+    <div id="progress" class="progress-bar bg-blue-600 h-full" style="width: 25%"></div>
+  </div>
+
+  <!-- Form Container -->
+  <section class="py-12 px-4 max-w-4xl mx-auto">
+    <form id="visaForm" class="bg-white rounded-lg shadow-md p-6 md:p-8">
+      <!-- Step 1: Personal Information -->
+      <div id="step1" class="form-step active">
+        <h2 class="text-2xl font-bold mb-6">Personal Information</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+            <input type="text" id="firstName" name="firstName" required 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
+            <input type="text" id="lastName" name="lastName" required 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+            <input type="email" id="email" name="email" required 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number*</label>
+            <input type="tel" id="phone" name="phone" required 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth*</label>
+            <input type="date" id="dob" name="dob" required 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="nationality" class="block text-sm font-medium text-gray-700 mb-1">Nationality*</label>
+            <select id="nationality" name="nationality" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+              <option value="">Select Country</option>
+              <option value="US">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="IN">India</option>
+              <option value="CN">China</option>
+              <option value="JP">Japan</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-8 flex justify-between">
+          <button type="button" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400" disabled>
+            Previous
+          </button>
+          <button type="button" onclick="nextStep(1, 2)" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Visa Details -->
+      <div id="step2" class="form-step">
+        <h2 class="text-2xl font-bold mb-6">Visa Details</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="visaType" class="block text-sm font-medium text-gray-700 mb-1">Visa Type*</label>
+            <select id="visaType" name="visaType" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+              <option value="">Select Visa Type</option>
+              <option value="tourist">Tourist Visa</option>
+              <option value="business">Business Visa</option>
+              <option value="student">Student Visa</option>
+              <option value="work">Work Visa</option>
+              <option value="transit">Transit Visa</option>
+              <option value="family">Family Visa</option>
+            </select>
+          </div>
+          <div>
+            <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Destination Country*</label>
+            <select id="destination" name="destination" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+              <option value="">Select Country</option>
+              <option value="US">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="JP">Japan</option>
+            </select>
+          </div>
+          <div>
+            <label for="purpose" class="block text-sm font-medium text-gray-700 mb-1">Purpose of Visit*</label>
+            <textarea id="purpose" name="purpose" rows="3" required 
+                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+          </div>
+          <div>
+            <label for="duration" class="block text-sm font-medium text-gray-700 mb-1">Intended Duration*</label>
+            <select id="duration" name="duration" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+              <option value="">Select Duration</option>
+              <option value="1-2 weeks">1-2 weeks</option>
+              <option value="1 month">1 month</option>
+              <option value="3 months">3 months</option>
+              <option value="6 months">6 months</option>
+              <option value="1 year">1 year</option>
+              <option value="multiple">Multiple entries</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-8 flex justify-between">
+          <button type="button" onclick="prevStep(2, 1)" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">
+            Previous
+          </button>
+          <button type="button" onclick="nextStep(2, 3)" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Documents Upload -->
+      <div id="step3" class="form-step">
+        <h2 class="text-2xl font-bold mb-6">Required Documents</h2>
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Passport Copy*</label>
+            <div class="border-2 border-dashed border-gray-300 rounded-md p-4 text-center">
+              <input type="file" id="passport" name="passport" required 
+                     class="hidden" accept=".pdf,.jpg,.jpeg,.png">
+              <label for="passport" class="cursor-pointer">
+                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                <p class="text-sm text-gray-600">Click to upload passport copy</p>
+                <p class="text-xs text-gray-500 mt-1">PDF, JPG, or PNG (Max 5MB)</p>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Passport Photo*</label>
+            <div class="border-2 border-dashed border-gray-300 rounded-md p-4 text-center">
+              <input type="file" id="photo" name="photo" required 
+                     class="hidden" accept=".jpg,.jpeg,.png">
+              <label for="photo" class="cursor-pointer">
+                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                <p class="text-sm text-gray-600">Click to upload passport photo</p>
+                <p class="text-xs text-gray-500 mt-1">JPG or PNG (Max 2MB)</p>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Documents</label>
+            <div class="border-2 border-dashed border-gray-300 rounded-md p-4 text-center">
+              <input type="file" id="additional" name="additional" multiple 
+                     class="hidden" accept=".pdf,.jpg,.jpeg,.png">
+              <label for="additional" class="cursor-pointer">
+                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                <p class="text-sm text-gray-600">Click to upload additional documents</p>
+                <p class="text-xs text-gray-500 mt-1">PDF, JPG, or PNG (Max 10MB total)</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 flex justify-between">
+          <button type="button" onclick="prevStep(3, 2)" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">
+            Previous
+          </button>
+          <button type="button" onclick="nextStep(3, 4)" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Review & Submit -->
+      <div id="step4" class="form-step">
+        <h2 class="text-2xl font-bold mb-6">Review & Submit</h2>
+        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+          <h3 class="text-lg font-semibold mb-4">Application Summary</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm text-gray-500">Full Name</p>
+              <p id="reviewName" class="font-medium">-</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Email</p>
+              <p id="reviewEmail" class="font-medium">-</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Phone</p>
+              <p id="reviewPhone" class="font-medium">-</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Date of Birth</p>
+              <p id="reviewDob" class="font-medium">-</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Visa Type</p>
+              <p id="reviewVisaType" class="font-medium">-</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Destination</p>
+              <p id="reviewDestination" class="font-medium">-</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Duration</p>
+              <p id="reviewDuration" class="font-medium">-</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="flex items-start">
+            <input type="checkbox" id="terms" name="terms" required 
+                   class="mt-1 mr-2 rounded text-blue-600 focus:ring-blue-500">
+            <span class="text-sm text-gray-700">I certify that all information provided is accurate and complete. I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>.</span>
+          </label>
+        </div>
+        <div class="mt-8 flex justify-between">
+          <button type="button" onclick="prevStep(4, 3)" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">
+            Previous
+          </button>
+          <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+            Submit Application
+          </button>
+        </div>
+      </div>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="successMessage" class="hidden text-center py-8">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-check text-green-600 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold mb-2">Application Submitted!</h2>
+        <p class="text-gray-600 mb-6">Your visa application has been received. We'll contact you within 24 hours.</p>
+        <a href="index.html" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          Back to Home
+        </a>
+      </div>
+    </form>
+  </section>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+
+  <script>
+    // Load shared components
+    fetch('components.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        document.getElementById('nav').appendChild(doc.querySelector('nav'));
+        document.getElementById('footer').appendChild(doc.querySelector('footer'));
+      });
+
+    // Form step navigation
+    function nextStep(current, next) {
+      document.getElementById(`step${current}`).classList.remove('active');
+      document.getElementById(`step${next}`).classList.add('active');
+      document.getElementById('progress').style.width = `${next * 25}%`;
+      
+      // Update review section if we're on the last step
+      if (next === 4) {
+        updateReviewSection();
+      }
+    }
+
+    function prevStep(current, prev) {
+      document.getElementById(`step${current}`).classList.remove('active');
+      document.getElementById(`step${prev}`).classList.add('active');
+      document.getElementById('progress').style.width = `${prev * 25}%`;
+    }
+
+    // Update review section with form data
+    function updateReviewSection() {
+      document.getElementById('reviewName').textContent = 
+        `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`;
+      document.getElementById('reviewEmail').textContent = document.getElementById('email').value;
+      document.getElementById('reviewPhone').textContent = document.getElementById('phone').value;
+      document.getElementById('reviewDob').textContent = document.getElementById('dob').value;
+      document.getElementById('reviewVisaType').textContent = 
+        document.getElementById('visaType').options[document.getElementById('visaType').selectedIndex].text;
+      document.getElementById('reviewDestination').textContent = 
+        document.getElementById('destination').options[document.getElementById('destination').selectedIndex].text;
+      document.getElementById('reviewDuration').textContent = 
+        document.getElementById('duration').options[document.getElementById('duration').selectedIndex].text;
+    }
+
+    // Form submission
+    document.getElementById('visaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide form and show success message
+      document.querySelectorAll('.form-step').forEach(step => {
+        step.classList.remove('active');
+      });
+      document.getElementById('successMessage').classList.remove('hidden');
+    });
+
+    // Pre-fill visa type if coming from visa-types page
+    const urlParams = new URLSearchParams(window.location.search);
+    const visaType = urlParams.get('type');
+    if (visaType) {
+      document.getElementById('visaType').value = visaType;
+    }
+  </script>
+</body>
+</html>
