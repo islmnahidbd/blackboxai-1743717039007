@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Visa Experts | LeogoVisa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    .expert-card:hover .expert-image {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <div id="nav"></div>
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="bg-[#f26522] py-32 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Visa Experts</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">Meet our team of dedicated professionals with decades of combined visa experience</p>
+      </div>
+    </section>
+
+    <!-- Experts Grid -->
+    <section class="py-20 px-4 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Expert 1 -->
+        <div class="expert-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="overflow-hidden h-80">
+            <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg" 
+                 alt="Sarah Johnson" 
+                 class="expert-image w-full h-full object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-1">Sarah Johnson</h3>
+            <p class="text-[#f26522] font-medium mb-4">Visa Processing Director</p>
+            <p class="text-gray-600 mb-4">12+ years experience in student and work visa processing for North America and Europe.</p>
+            <div class="flex space-x-3">
+              <a href="#" class="text-gray-400 hover:text-[#f26522] transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-[#f26522] transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expert 2 -->
+        <div class="expert-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="overflow-hidden h-80">
+            <img src="https://images.pexels.com/photos/3771086/pexels-photo-3771086.jpeg" 
+                 alt="Michael Chen" 
+                 class="expert-image w-full h-full object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-1">Michael Chen</h3>
+            <p class="text-[#f26522] font-medium mb-4">Documentation Specialist</p>
+            <p class="text-gray-600 mb-4">Expert in document authentication and legalization for Asian and Middle Eastern countries.</p>
+            <div class="flex space-x-3">
+              <a href="#" class="text-gray-400 hover:text-[#f26522] transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-[#f26522] transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expert 3 -->
+        <div class="expert-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="overflow-hidden h-80">
+            <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" 
+                 alt="Amina Rahman" 
+                 class="expert-image w-full h-full object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-1">Amina Rahman</h3>
+            <p class="text-[#f26522] font-medium mb-4">Client Relations Manager</p>
+            <p class="text-gray-600 mb-4">Specializes in family and spouse visa applications with 8 years of experience.</p>
+            <div class="flex space-x-3">
+              <a href="#" class="text-gray-400 hover:text-[#f26522] transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-[#f26522] transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Start Your Visa Journey?</h2>
+        <p class="text-xl text-gray-600 mb-8">Our experts are here to guide you through every step of the process.</p>
+        <a href="contact.html" class="inline-block bg-[#f26522] text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-[#e05b1d] transition">
+          Contact Our Team
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    // Load shared components
+    fetch('components.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        document.getElementById('nav').appendChild(doc.querySelector('nav'));
+        document.getElementById('footer').appendChild(doc.querySelector('footer'));
+      });
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".expert-card").forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        delay: i * 0.1
+      });
+    });
+  </script>
+</body>
+</html>
