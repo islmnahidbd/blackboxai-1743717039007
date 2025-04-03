@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisaService - Global Visa Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.pexels.com/photos/730981/pexels-photo-730981.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <!-- Include Navigation -->
+  <div id="nav"></div>
+
+  <!-- Hero Section -->
+  <section class="hero h-screen flex items-center justify-center text-white">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Global Visa Solutions</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Simplified visa applications for your international travel needs</p>
+      <a href="application-form.html" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+        Start Your Application
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Visa Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="text-blue-600 mb-4">
+          <i class="fas fa-passport text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Tourist Visa</h3>
+        <p class="text-gray-600">Explore new destinations with our hassle-free tourist visa processing.</p>
+        <a href="services.html#tourist" class="mt-4 inline-block text-blue-600 hover:underline">Learn more →</a>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="text-blue-600 mb-4">
+          <i class="fas fa-briefcase text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Work Visa</h3>
+        <p class="text-gray-600">Secure your work visa for international career opportunities.</p>
+        <a href="services.html#work" class="mt-4 inline-block text-blue-600 hover:underline">Learn more →</a>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="text-blue-600 mb-4">
+          <i class="fas fa-graduation-cap text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Student Visa</h3>
+        <p class="text-gray-600">Pursue your education abroad with our student visa assistance.</p>
+        <a href="services.html#student" class="mt-4 inline-block text-blue-600 hover:underline">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Simple Application Process</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-blue-600 text-xl font-bold">1</span>
+          </div>
+          <h3 class="font-semibold mb-2">Select Visa Type</h3>
+          <p class="text-gray-600 text-sm">Choose from our range of visa options</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-blue-600 text-xl font-bold">2</span>
+          </div>
+          <h3 class="font-semibold mb-2">Complete Form</h3>
+          <p class="text-gray-600 text-sm">Fill our simple online application</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-blue-600 text-xl font-bold">3</span>
+          </div>
+          <h3 class="font-semibold mb-2">Submit Documents</h3>
+          <p class="text-gray-600 text-sm">Upload required documents securely</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-blue-600 text-xl font-bold">4</span>
+          </div>
+          <h3 class="font-semibold mb-2">Receive Visa</h3>
+          <p class="text-gray-600 text-sm">Get your visa processed quickly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+
+  <script>
+    // Load shared components
+    fetch('components.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        document.getElementById('nav').appendChild(doc.querySelector('nav'));
+        document.getElementById('footer').appendChild(doc.querySelector('footer'));
+      });
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      const nav = document.querySelector('nav');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        nav.classList.toggle('mobile-menu-open');
+      });
+    });
+  </script>
+</body>
+</html>
