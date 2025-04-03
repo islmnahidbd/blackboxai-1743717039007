@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs - VisaService</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .faq-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.pexels.com/photos/356065/pexels-photo-356065.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .faq-question {
+      transition: all 0.3s ease;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+    .faq-item.active .faq-question {
+      color: #2563eb;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <!-- Include Navigation -->
+  <div id="nav"></div>
+
+  <!-- Hero Section -->
+  <section class="faq-hero h-64 flex items-center justify-center text-white">
+    <div class="text-center px-4">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-lg">Find answers to common questions about our visa services</p>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="py-12 px-4 max-w-4xl mx-auto">
+    <div class="mb-8">
+      <div class="relative">
+        <input type="text" placeholder="Search FAQs..." 
+               class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 pl-10">
+        <i class="fas fa-search absolute left-3 top-3.5 text-gray-400"></i>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <!-- General Questions -->
+      <h2 class="text-xl font-bold mb-4 text-blue-600">General Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">What documents do I need for a visa application?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p class="mb-2">The required documents vary depending on the visa type and destination country, but typically include:</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Valid passport (with at least 6 months validity)</li>
+              <li>Passport-sized photographs</li>
+              <li>Completed application form</li>
+              <li>Proof of travel arrangements (flight itinerary)</li>
+              <li>Proof of accommodation</li>
+              <li>Financial statements showing sufficient funds</li>
+              <li>Travel insurance (for some countries)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">How long does the visa processing take?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>Processing times vary by visa type and destination country:</p>
+            <ul class="list-disc pl-5 space-y-1 mt-2">
+              <li><strong>Tourist visas:</strong> 3-10 business days</li>
+              <li><strong>Business visas:</strong> 5-15 business days</li>
+              <li><strong>Student visas:</strong> 2-4 weeks</li>
+              <li><strong>Work visas:</strong> 3-6 weeks</li>
+            </ul>
+            <p class="mt-2">We recommend applying at least 4-6 weeks before your intended travel date to account for any delays.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">Can I track my visa application status?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>Yes, once you submit your application through VisaService, you'll receive:</p>
+            <ul class="list-disc pl-5 space-y-1 mt-2">
+              <li>A unique application reference number</li>
+              <li>Regular email updates at each processing stage</li>
+              <li>Access to our online tracking portal</li>
+            </ul>
+            <p class="mt-2">Our customer support team is also available to provide status updates via phone or email.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Process -->
+      <h2 class="text-xl font-bold mb-4 mt-8 text-blue-600">Application Process</h2>
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">How do I apply for a visa through VisaService?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>Our application process is simple and straightforward:</p>
+            <ol class="list-decimal pl-5 space-y-2 mt-2">
+              <li>Select your visa type and destination country</li>
+              <li>Complete our online application form</li>
+              <li>Upload required documents (passport copy, photos, etc.)</li>
+              <li>Pay the visa fee securely online</li>
+              <li>Submit your application for processing</li>
+              <li>Receive your visa via email or collect from our office</li>
+            </ol>
+            <p class="mt-2">Our team will guide you through each step and verify all documents before submission.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">What payment methods do you accept?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>We accept the following payment methods:</p>
+            <ul class="list-disc pl-5 space-y-1 mt-2">
+              <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
+              <li>Bank Transfers</li>
+              <li>Online Payment Gateways (PayPal, Stripe)</li>
+              <li>Cash payments at our office locations</li>
+            </ul>
+            <p class="mt-2">All transactions are secure and encrypted for your protection.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visa Specific -->
+      <h2 class="text-xl font-bold mb-4 mt-8 text-blue-600">Visa Specific Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">What's the difference between single and multiple entry visas?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>The main differences are:</p>
+            <ul class="list-disc pl-5 space-y-2 mt-2">
+              <li><strong>Single Entry Visa:</strong> Allows one entry to the destination country. If you leave, you'll need a new visa to re-enter.</li>
+              <li><strong>Multiple Entry Visa:</strong> Allows unlimited entries during the visa validity period. Ideal for frequent travelers.</li>
+            </ul>
+            <p class="mt-2">Multiple entry visas typically cost more but provide greater flexibility. The choice depends on your travel plans.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">Can I extend my visa while abroad?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>Visa extension possibilities depend on:</p>
+            <ul class="list-disc pl-5 space-y-1 mt-2">
+              <li>The destination country's immigration policies</li>
+              <li>Your visa type and current status</li>
+              <li>The reason for your extension request</li>
+            </ul>
+            <p class="mt-2">Some countries allow extensions for tourism or business, while others require you to return home and apply for a new visa. Contact us at least 2 weeks before your visa expires for assistance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support -->
+      <h2 class="text-xl font-bold mb-4 mt-8 text-blue-600">Support & Assistance</h2>
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">What if my visa application is rejected?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>In case of rejection, we offer:</p>
+            <ul class="list-disc pl-5 space-y-1 mt-2">
+              <li>Detailed explanation of the rejection reasons</li>
+              <li>Assistance with reapplying (if eligible)</li>
+              <li>Refund of our service fee (visa fees are non-refundable)</li>
+              <li>Alternative solutions (different visa types, appeal process)</li>
+            </ul>
+            <p class="mt-2">Our success rate is over 95%, but we provide full support for the rare cases of rejection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question flex justify-between items-center p-4 cursor-pointer">
+          <h3 class="font-medium">How can I contact VisaService for help?</h3>
+          <i class="faq-toggle fas fa-chevron-down text-gray-400 transition-transform"></i>
+        </div>
+        <div class="faq-answer px-4">
+          <div class="pb-4 text-gray-600">
+            <p>We offer multiple support channels:</p>
+            <ul class="list-disc pl-5 space-y-1 mt-2">
+              <li><strong>Phone:</strong> +1 (800) 555-1234 (24/7 support)</li>
+              <li><strong>Email:</strong> support@visaservice.com</li>
+              <li><strong>Live Chat:</strong> Available on our website</li>
+              <li><strong>In-Person:</strong> Visit any of our global offices</li>
+            </ul>
+            <p class="mt-2">Average response time is under 2 hours during business hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Still have questions -->
+    <div class="mt-12 bg-blue-50 rounded-lg p-6 text-center">
+      <h3 class="text-xl font-bold mb-2">Still have questions?</h3>
+      <p class="text-gray-600 mb-4">Our visa experts are ready to help you with any additional questions.</p>
+      <a href="contact.html" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+
+  <script>
+    // Load shared components
+    fetch('components.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        document.getElementById('nav').appendChild(doc.querySelector('nav'));
+        document.getElementById('footer').appendChild(doc.querySelector('footer'));
+      });
+
+    // FAQ accordion functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+
+    // FAQ search functionality
+    const searchInput = document.querySelector('input[type="text"]');
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
